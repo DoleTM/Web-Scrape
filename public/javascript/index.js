@@ -19,7 +19,7 @@ $(document).on("click", ".scrape", function (e) {
                     data[i].userName + "</h5><p>" +
                     data[i].summary + "</p><p>By: " +
                     data[i].author + "</p><a href=''" +
-                    data[i].url + "' class='btn btn-primary'>View Full Article</a><p class='btn'>Favorited Article</p></div></li><hr>"
+                    data[i].url + "' class='btn indigo'><i class='far fa-file-alt'></i> View Full Article</a><p class='btn disabled'>Favorited Article</p></div></li><hr>"
 
                 $("#article-list").prepend(newOne);
             } else {
@@ -28,8 +28,8 @@ $(document).on("click", ".scrape", function (e) {
                     data[i].userName + "</h5><p>" +
                     data[i].summary + "</p><p>By: " +
                     data[i].author + "</p><a href=''" +
-                    data[i].url + "' class='btn btn-primary'>View Full Article</a><button type='button' class='btn btn-danger' data-id='" +
-                    data[i]._id + "' id='saveArticle'>Favorite Article</button></div></li><hr>"
+                    data[i].url + "' class='btn indigo'><i class='far fa-file-alt'></i> View Full Article</a><button type='button' class='btn green' data-id='" +
+                    data[i]._id + "' id='saveArticle'><i class='fas fa-archive'></i> Favorite This Article</button></div></li><hr>"
 
                 $("#article-list").prepend(newOne);
             }
@@ -53,12 +53,12 @@ $(document).on("click", "#savedArticles", function (e) {
                 data[i].userName + "</h5><p>" +
                 data[i].summary + "</p><p>By: " +
                 data[i].author + "</p><a href=''" +
-                data[i].url + "' class='btn btn-primary'>View Full Article</a><button type='button' class='btn btn-danger' data-id='" +
+                data[i].url + "' class='btn indigo'><i class='far fa-file-alt'></i> View Full Article</a><button type='button' class='btn light-blue' data-id='" +
                 data[i]._id + "' data-sum='" +
-                data[i].userName + " data-toggle='modal' id='seeNote'>View Note</button><button type='button' class='btn btn-danger' data-id='" +
+                data[i].userName + " data-toggle='modal' id='seeNote'><i class='far fa-comments'></i> View Comments</button><button type='button' class='btn light-blue' data-id='" +
                 data[i]._id + "' data-sum='" +
-                data[i].userName + "' id='writeNote'>Compose Note</button><button class='btn btn-danger' data-id='" +
-                data[i]._id + "' id='deleteArticle'>Un-Favorite Article</button></div></li><hr>"
+                data[i].userName + "' id='writeNote'><i class='far fa-comment-dots'></i> Compose Comment</button><button class='btn red' data-id='" +
+                data[i]._id + "' id='deleteArticle'><i class='fas fa-minus-circle'></i> Un-Favorite Article</button></div></li><hr>"
 
             $("#article-list").prepend(newOne);
         };
@@ -80,20 +80,20 @@ $(document).on("click", "#addNote", function (e) {
     $("#notesModal").modal('close')
     console.log("Note Added")
     var thisId = $(this).attr("data-id");
-    var title = $("#noteTitle").val();
+    var userName = $("#noteuserName").val();
     var body = $("#noteBody").val();
 
     $.ajax({
         method: "POST",
         url: "/note/" + thisId,
         data: {
-            title: title,
+            userName: userName,
             body: body
         }
     }).then(function (data) {
         console.log(data);
     });
-    $("#noteTitle").val("");
+    $("#noteuserName").val("");
     $("#noteBody").val("");
 });
 
@@ -162,7 +162,7 @@ $(document).on("click", "#seeNote", function (e) {
                 console.log("deleted")
             } else {
                 var notes = "<div class='row'><div class='col s8><div id='singleNote' class='text-center'><h6>" +
-                    data[0].notes[i].title + "</h6><h6>" +
+                    data[0].notes[i].userName + "</h6><h6>" +
                     data[0].notes[i].body + "</h6></div><button class='btn col s3' id='deleteNote' data-noteId='" +
                     data[0].notes[i]._id + "' data-id='" +
                     data[0]._id + "'>Delete</button></div></div><hr>"

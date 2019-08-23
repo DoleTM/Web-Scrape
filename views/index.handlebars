@@ -1,13 +1,17 @@
 <div id="home">
 
   <div class="topBanner">
-    <span class="pageHeader">Recent News in Tech</span>
-    <button class="scrape btn btn-primary">View Most Recent Articles</button>
-    <button id="savedArticles" class="btn">Favorites</button>
+    <span class="pageHeader">News in Tech</span>
+    <button class="scrape btn white">
+      <i class="fas fa-sync-alt"></i> View Recent Articles
+    </button>
+    <button id="savedArticles" class="btn green">
+      <i class="fas fa-star"></i> Favorites
+    </button>
   </div>
   <div class="clear"></div>
   <div class="container">
-    <h3>Scraped Articles:</h3>
+    <h3 class="newsHeader">Scraped News Headlines:</h3>
 
     <ul id="article-list" class="list-group">
       {{#each content}}
@@ -21,46 +25,50 @@
           <h5>{{this.userName}}</h5>
           <p>{{this.summary}}</p>
           <p>By: {{this.author}}</p>
-          <a href="{{this.url}}" class="btn btn-primary">View Full Article</a>
-          <button class="btn btn-danger" data-id="{{this._id}}" id="saveArticle">Favorite Article</button>
+          <a href="{{this.url}}" class="btn black">
+            <i class="far fa-file-alt"></i> View Full Article
+          </a>
+          <button class="btn green" data-id="{{this._id}}" id="saveArticle">
+            <i class="fas fa-archive"></i> Favorite This Article
+          </button>
         </div>
       </li>
       <hr>
       {{/each}}
     </ul>
 
-    <div id="notesModal" class="modal">
+    <div id="commentsModal" class="modal">
       <div class="modal-content">
-        <h4 id="modalUserName"></h4>
-        <h6>Note Title</h6>
-        <input type="textarea" id="noteTitle">
-        <h6>Note</h6>
-        <textarea type="textarea" id="noteBody" rows="3"></textarea>
-        <button class="btn" id="addNote">Add Note</button>
-        <button id="close" class="modal-close waves-effect waves-green btn-flat">Close</button>
+        <h4 id="modaluserName"></h4>
+        <h6>Comment Title</h6>
+        <input type="textarea" id="commentuserName">
+        <h6>Comment</h6>
+        <textarea type="textarea" id="commentBody" rows="3"></textarea>
+        <button class="btn-flat" id="addComment">Add Comment</button>
+        <button id="close" class="modal-close waves-effect waves-yellow btn-flat">Close</button>
       </div>
     </div>
 
-    <div id="seeModal" class="modal">
+    <div id="showModal" class="modal">
       <div class="modal-content">
         <h4>Notes</h4>
         <div id="modalNotes-content">
         </div>
-        <button id="close" class='modal-close waves-effect waves-green btn-flat'>Close</button>
+        <button id="close" class='modal-close waves-effect waves-yellow btn-flat'>Close</button>
       </div>
     </div>
 
     <div id="saved" class="modal">
       <div class="modal-content">
-        <h4>This article has been favorited.</h4>
-        <button id="close" class='modal-close waves-effect waves-green btn-flat'>Close</button>
+        <h4 class="modal-text">This article has been added to favorites.</h4>
+        <button id="close" class='modal-close waves-effect waves-yellow btn-flat'>Close</button>
       </div>
     </div>
 
-    <div id="deleted" class="modal">
+    <div id="removed" class="modal">
       <div class="modal-content">
         <h4>This article has been removed from favorites.</h4>
-        <button id="close" class='modal-close waves-effect waves-green btn-flat'>Close</button>
+        <button id="close" class='modal-close waves-effect waves-yellow btn'>Close</button>
       </div>
     </div>
 

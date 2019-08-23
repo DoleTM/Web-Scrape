@@ -5,10 +5,10 @@ html {
 body {
     height: 100%;
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: repeat;
+    background-size: auto;
     background-attachment: fixed;
-    
+    background-image: url(../images/dark-honeycomb.png);
 }
 
 .selector-for-some-widget {
@@ -22,12 +22,37 @@ body {
 }
 
 .topBanner {
-    padding: 20px 20px 35px 20px;
-    background-color:rgb(137,126,108);
+    height: 30%;
+    width: 100%;
+    padding: 20px;
+    background-image: url('https://coverfiles.alphacoders.com/576/57611.jpg');
+    background-size: cover;
+    font-family: 'VT323', monospace;
 }
 
 .pageHeader {
     font-size: 30px;
+    background-color: black;
+    color: white;
+    letter-spacing: .2rem;
+}
+
+.fa-sync-alt {
+    color: black;
+}
+
+.scrape {
+    color: black;
+}
+
+.newsHeader {
+    font-family: 'Great Vibes', cursive;
+    color: white;
+    letter-spacing: .2rem;
+}
+
+.container {
+    font-family: Verdana, Tahoma, sans-serif;
 }
 
 .scrape {
@@ -43,14 +68,22 @@ body {
 }
 
 .btn {
-    margin-right: 5px;
+    margin: 5px;
 }
 
-#deleteNote {
+#removeComment {
     float: right;
    margin-top: 20px;
 }
 
 .clear {
     clear:both;
+}
+
+.modal {
+    background-image: linear-gradient(to bottom left, #eeeeee, #ffffff)
+}
+
+.modal-text {
+    text-align: center;
 }

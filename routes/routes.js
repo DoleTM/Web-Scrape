@@ -101,7 +101,7 @@ module.exports = function (app) {
             });
     });
 
-    app.post("/deleteNote/:id", function (req, res) {
+    app.post("/removeComment/:id", function (req, res) {
         db.Note.update({ _id: req.params.id }, req.body)
             .then(function (data) {
                 res.json(data);
