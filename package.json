@@ -1,21 +1,21 @@
 {
-  "name": "scrapin.on.my.scraperbike",
+  "name": "web-scrape",
   "version": "1.0.0",
-  "description": "My Scraper Bike go hard I don't need a car",
-  "main": "index.js",
+  "description": "Scraped tech information from medium.com",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DoleTM/Scrapin.On.My.ScraperBike.git"
+    "url": "git+https://github.com/DoleTM/Web-Scrape.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DoleTM/Scrapin.On.My.ScraperBike/issues"
+    "url": "https://github.com/DoleTM/Web-Scrape/issues"
   },
-  "homepage": "https://github.com/DoleTM/Scrapin.On.My.ScraperBike#readme",
+  "homepage": "https://github.com/DoleTM/Web-Scrape#readme",
   "dependencies": {
     "axios": "^0.18.1",
     "cheerio": "^1.0.0-rc.2",

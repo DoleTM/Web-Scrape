@@ -1,3 +1,56 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+.row {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    background-color: white;
+}
+
 .topBanner {
-    background-color: blue;
+    padding: 20px 20px 35px 20px;
+    background-color:rgb(137,126,108);
+}
+
+.pageHeader {
+    font-size: 30px;
+}
+
+.scrape {
+    float: right;
+}
+
+#savedArticles {
+    float: right;
+}
+
+.picture {
+    margin-top: 10px;
+}
+
+.btn {
+    margin-right: 5px;
+}
+
+#deleteNote {
+    float: right;
+   margin-top: 20px;
+}
+
+.clear {
+    clear:both;
 }

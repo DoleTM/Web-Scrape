@@ -1,26 +1,24 @@
+// Dependencies
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-// Schema constructor
 var ArticleSchema = new Schema({
-    title: {
+    userName: {
         type: String,
-        required: true,
         unique: true,
-        trim: true
-    },
-    link: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true
+        trim: true,
+        required: true
     },
     summary: {
         type: String,
         required: true
     },
-    picture: String,
-    author: String,
+    url: {
+        type: String,
+        unique: true,
+        trim: true,
+        required: true
+    },
     notes: [{
         type: Schema.Types.ObjectId,
         ref: "Note"
@@ -32,10 +30,11 @@ var ArticleSchema = new Schema({
     saved: {
         type: String,
         default: "false"
-    }
+    },
+    photo: String,
+    author: String,
 });
 
 var Article = mongoose.model("Article", ArticleSchema);
 
-// Export model
 module.exports = Article;

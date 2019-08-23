@@ -1,28 +1,28 @@
 <div id="home">
 
   <div class="topBanner">
-    <span class="pageHeader">Get the latest Tech News</span>
-    <button class="scrape btn btn-primary">Get Newest</button>
-    <button id="savedArticles" class="btn">Saved Articles</button>
+    <span class="pageHeader">Recent News in Tech</span>
+    <button class="scrape btn btn-primary">View Most Recent Articles</button>
+    <button id="savedArticles" class="btn">Favorites</button>
   </div>
   <div class="clear"></div>
   <div class="container">
-    <h3>Articles:</h3>
+    <h3>Scraped Articles:</h3>
 
     <ul id="article-list" class="list-group">
       {{#each content}}
       <li class="list-group-item row">
 
         <div class="center-align col s3 picture">
-          <img src="{{this.picture}}">
+          <img src="{{this.photo}}">
         </div>
 
         <div class="col s8">
-          <h5>{{this.title}}</h5>
+          <h5>{{this.userName}}</h5>
           <p>{{this.summary}}</p>
-          <p>By {{this.author}}</p>
-          <a href="{{this.link}}" class="btn btn-primary">Full Article</a>
-          <button class="btn btn-danger" data-id="{{this._id}}" id="saveArticle">Save Article</button>
+          <p>By: {{this.author}}</p>
+          <a href="{{this.url}}" class="btn btn-primary">View Full Article</a>
+          <button class="btn btn-danger" data-id="{{this._id}}" id="saveArticle">Favorite Article</button>
         </div>
       </li>
       <hr>
@@ -52,14 +52,14 @@
 
     <div id="saved" class="modal">
       <div class="modal-content">
-        <h4>Your Article has been Saved!</h4>
+        <h4>This article has been favorited.</h4>
         <button id="close" class='modal-close waves-effect waves-green btn-flat'>Close</button>
       </div>
     </div>
 
     <div id="deleted" class="modal">
       <div class="modal-content">
-        <h4>It has been Deleted!</h4>
+        <h4>This article has been removed from favorites.</h4>
         <button id="close" class='modal-close waves-effect waves-green btn-flat'>Close</button>
       </div>
     </div>
