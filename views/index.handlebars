@@ -1,3 +1,68 @@
-<div>
-    
+<div id="home">
+
+  <div class="topBanner">
+    <span class="pageHeader">Get the latest Tech News</span>
+    <button class="scrape btn btn-primary">Get Newest</button>
+    <button id="savedArticles" class="btn">Saved Articles</button>
+  </div>
+  <div class="clear"></div>
+  <div class="container">
+    <h3>Articles:</h3>
+
+    <ul id="article-list" class="list-group">
+      {{#each content}}
+      <li class="list-group-item row">
+
+        <div class="center-align col s3 picture">
+          <img src="{{this.picture}}">
+        </div>
+
+        <div class="col s8">
+          <h5>{{this.title}}</h5>
+          <p>{{this.summary}}</p>
+          <p>By {{this.author}}</p>
+          <a href="{{this.link}}" class="btn btn-primary">Full Article</a>
+          <button class="btn btn-danger" data-id="{{this._id}}" id="saveArticle">Save Article</button>
+        </div>
+      </li>
+      <hr>
+      {{/each}}
+    </ul>
+
+    <div id="notesModal" class="modal">
+      <div class="modal-content">
+        <h4 id="modalUserName"></h4>
+        <h6>Note Title</h6>
+        <input type="textarea" id="noteTitle">
+        <h6>Note</h6>
+        <textarea type="textarea" id="noteBody" rows="3"></textarea>
+        <button class="btn" id="addNote">Add Note</button>
+        <button id="close" class="modal-close waves-effect waves-green btn-flat">Close</button>
+      </div>
+    </div>
+
+    <div id="seeModal" class="modal">
+      <div class="modal-content">
+        <h4>Notes</h4>
+        <div id="modalNotes-content">
+        </div>
+        <button id="close" class='modal-close waves-effect waves-green btn-flat'>Close</button>
+      </div>
+    </div>
+
+    <div id="saved" class="modal">
+      <div class="modal-content">
+        <h4>Your Article has been Saved!</h4>
+        <button id="close" class='modal-close waves-effect waves-green btn-flat'>Close</button>
+      </div>
+    </div>
+
+    <div id="deleted" class="modal">
+      <div class="modal-content">
+        <h4>It has been Deleted!</h4>
+        <button id="close" class='modal-close waves-effect waves-green btn-flat'>Close</button>
+      </div>
+    </div>
+
+  </div>
 </div>

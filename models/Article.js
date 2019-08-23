@@ -5,18 +5,36 @@ var Schema = mongoose.Schema;
 var ArticleSchema = new Schema({
     title: {
         type: String,
-        required: true
+        required: true,
+        unique: true,
+        trim: true
     },
     link: {
         type: String,
+        required: true,
+        unique: true,
+        trim: true
+    },
+    summary: {
+        type: String,
         required: true
     },
-    note: {
+    picture: String,
+    author: String,
+    notes: [{
         type: Schema.Types.ObjectId,
         ref: "Note"
+    }],
+    dateAdded: {
+        type: Date,
+        default: Date.now()
+    },
+    saved: {
+        type: String,
+        default: "false"
     }
 });
-// Create model
+
 var Article = mongoose.model("Article", ArticleSchema);
 
 // Export model
