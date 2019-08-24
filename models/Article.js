@@ -5,7 +5,6 @@ var Schema = mongoose.Schema;
 var ArticleSchema = new Schema({
     userName: {
         type: String,
-        unique: true,
         trim: true,
         required: true
     },
@@ -15,7 +14,6 @@ var ArticleSchema = new Schema({
     },
     url: {
         type: String,
-        unique: true,
         trim: true,
         required: true
     },
