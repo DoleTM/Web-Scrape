@@ -30,7 +30,7 @@ node server.js
 ```
 ## Deployment
 
-* [Web-Scrape](https://infinite-bastion-71270.herokuapp.com/) - See the working by clicking the link
+* [Web-Scrape](https://infinite-bastion-71270.herokuapp.com/) - Checkout the deployed site by clicking the link
 
 ## Built With
 
