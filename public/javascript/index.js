@@ -70,18 +70,18 @@ $(document).on("click", "#writeNote", function (e) {
     console.log("Note Modal Opened")
     var sum = $(this).attr("data-sum");
     var thisId = $(this).attr("data-id");
-    $("#addNote").attr("data-id", thisId);
+    $("#addComment").attr("data-id", thisId);
     $("#modalUserName").text(sum);
-    $("#notesModal").modal('open')
+    $("#commentsModal").modal('open')
 })
 
-$(document).on("click", "#addNote", function (e) {
+$(document).on("click", "#addComment", function (e) {
     e.preventDefault();
-    $("#notesModal").modal('close')
-    console.log("Note Added")
+    $("#commentsModal").modal('close')
+    console.log("Comment Added")
     var thisId = $(this).attr("data-id");
     var userName = $("#noteuserName").val();
-    var body = $("#noteBody").val();
+    var body = $("#commentBody").val();
 
     $.ajax({
         method: "POST",
@@ -94,7 +94,7 @@ $(document).on("click", "#addNote", function (e) {
         console.log(data);
     });
     $("#noteuserName").val("");
-    $("#noteBody").val("");
+    $("#commentBody").val("");
 });
 
 $(document).on("click", "#saveArticle", function (e) {
@@ -170,14 +170,14 @@ $(document).on("click", "#seeNote", function (e) {
                 $("#modalNotes-content").append(notes);
             };
         };
-        $("#seeModal").modal('open')
+        $("#showModal").modal('open')
     });
 });
 
 $(document).on("click", "#deleteNote", function (e) {
     e.preventDefault();
     var thisId = $(this).attr("data-noteId");
-    $("#seeModal").modal('close')
+    $("#showModal").modal('close')
     console.log("16")
     $.ajax({
         method: "POST",
@@ -187,6 +187,6 @@ $(document).on("click", "#deleteNote", function (e) {
         }
     }).then(function (data) {
         console.log(data);
-        $("#deleted").modal('open')
+        $("#remove").modal('open')
     });
 });
